@@ -10,6 +10,7 @@ import flow from 'lodash/fp/flow'
 import max from 'lodash/fp/max'
 import filter from 'lodash/fp/filter'
 import first from 'lodash/fp/first'
+import isString from 'lodash/fp/isString'
 
 export function getLastLevel(elements){
   const level = flow(values, map(e => e.level), max)(elements)
@@ -55,7 +56,8 @@ export function getPlainState(list, el){
 export function assignKeyToContent(el, level){
   if(el !== null) {
     if(typeof el !== 'string'){
-      el.key = uuidv4()
+      // Preserve existing keys if already present to keep selections stable
+      el.key = el.key || uuidv4()
       el.level = level
     }
     if (el.children) {
@@ -84,4 +86,27 @@ export function getHoverKeys() {
   }, {})(elements)
 
   return hoveredElements
+}
+
+export function validateContent(root) {
+  let h1Count = 0
+  function walk(node) {
+    if (!node || isString(node)) return
+    if (node.element === 'h1') h1Count += 1
+    if (node.element === 'img') {
+      const alt = node.props?.alt
+      if (!alt) {
+        // eslint-disable-next-line no-console
+        console.warn('Image missing alt text at node:', node)
+      }
+    }
+    const children = node.children
+    if (Array.isArray(children)) children.forEach(walk)
+    else if (children && typeof children === 'object') walk(children)
+  }
+  walk(root)
+  if (h1Count > 1) {
+    // eslint-disable-next-line no-console
+    console.warn(`Heading hierarchy warning: found ${h1Count} <h1> elements. Prefer a single <h1> per page.`)
+  }
 }

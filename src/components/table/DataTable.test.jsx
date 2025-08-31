@@ -15,3 +15,4 @@ test('renders table with data', () => {
   render(<DataTable columnsDefinition={columns} data={data} />);
   expect(screen.getByText('First')).toBeInTheDocument();
 });
+

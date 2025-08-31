@@ -6,11 +6,11 @@ function MainLayout(props) {
   const { valueKey, onMouseMove, onClick, onSelectFromLeftPanel, onChange } = props
 
   return(
-    <div className='row no-gutters'>
-      <div className={'col col-lg-2'}>
+    <div className='grid grid-cols-12 gap-0'>
+      <div className={'col-span-12 lg:col-span-2'}>
         <ElementList onSelectFromLeftPanel={onSelectFromLeftPanel} onChange={onChange} />
       </div>
-      <div className={'col col-lg-10'} onMouseMove={onMouseMove} onClick={onClick}>
+      <div className={'col-span-12 lg:col-span-10'} onMouseMove={onMouseMove} onClick={onClick}>
         <DynamicBuilderRender valueKey={valueKey}  />
       </div>
     </div>

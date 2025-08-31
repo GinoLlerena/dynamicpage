@@ -7,101 +7,91 @@ const landingPage = {
       {
         element: 'nav',
         props: {
-          className: 'navbar navbar-expand-lg', // fixed-top',
+          className: 'w-full sticky top-0 z-50 bg-white/90 backdrop-blur border-b h-14 px-4 flex items-center justify-between', // compact, modern navbar
         },
         children: [
           {
             element: 'a',
             props: {
-              className: 'navbar-brand'
+              className: 'text-xl font-semibold'
             },
             children: 'Home'
           },
           {
             element: 'button',
             props: {
-              className: 'navbar-toggler',
+              className: 'md:hidden text-gray-700',
               type: 'button'
             },
             children: {
               element: 'span',
               props: {
-                className: "navbar-toggler-icon"
+                className: 'block w-6 h-6 bg-gray-700'
               }
             }
           },
           {
             element: 'div',
             props: {
-              className: "collapse navbar-collapse ",
+              className: 'w-full md:flex md:items-center md:justify-end',
             },
             children: {
               element: 'ul',
               props: {
-                className: "navbar-nav mr-4"
+                className: 'flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 ml-auto'
               },
               children: [
                 {
                   element: 'li',
-                  props: {
-                    className: "nav-item"
-                  },
+                  props: {},
                   children: {
                     element: 'a',
                     props: {
-                      className:"nav-link"
+                      className:'text-gray-700 hover:text-accent-600'
                     },
                     children: 'About'
                   }
                 },
                 {
                   element: 'li',
-                  props: {
-                    className: "nav-item"
-                  },
+                  props: {},
                   children: {
                     element: 'a',
                     props: {
-                      className:"nav-link"
+                      className:'text-gray-700 hover:text-accent-600'
                     },
                     children: 'Portfolio'
                   }
                 },
                 {
                   element: 'li',
-                  props: {
-                    className: "nav-item"
-                  },
+                  props: {},
                   children: {
                     element: 'a',
                     props: {
-                      className:"nav-link"
+                      className:'text-gray-700 hover:text-accent-600'
                     },
                     children: 'Blog'
                   }
                 },
                 {
                   element: 'li',
-                  props: {
-                    className: "nav-item"
-                  },
+                  props: {},
                   children: {
                     element: 'a',
                     props: {
-                      className:"nav-link"
+                      className:'text-gray-700 hover:text-accent-600'
                     },
                     children: 'Team'
                   }
                 },
                 {
                   element: 'li',
-                  props: {
-                    className: "nav-item"
-                  },
+                  props: {},
                   children: {
                     element: 'a',
                     props: {
-                      className:"nav-link"
+                      className:'text-gray-700 hover:text-accent-600'
                     },
                     children: 'Contact'
                   }
@@ -114,28 +104,31 @@ const landingPage = {
       {
         element: 'header',
         props: {
-          className: 'header',
-          style: { height: '100vh' }
+          className: 'relative bg-cover bg-center min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh]',
+          style: { backgroundImage: "url('/images/headerback.jpg')" }
         },
         children: [
           {
             element: 'div',
             props: {
-              className: 'overlay'
+              className: 'absolute inset-0 bg-black/40'
             },
           },
           {
             element: 'div',
             props: {
-              className: 'container'
+              className: 'mx-auto max-w-7xl px-4 flex items-center min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh]'
             },
             children: {
               element: 'div',
               props: {
-                className: 'description'
+                className: 'relative z-10 p-6 md:p-8'
               },
               children: {
                 element: 'h1',
+                props: {
+                  className: 'text-2xl md:text-3xl lg:text-4xl font-semibold text-white drop-shadow text-center md:text-left'
+                },
                 children: {
                     element: 'p',
                     children: 'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -148,12 +141,12 @@ const landingPage = {
       {
         element: 'div',
         props: {
-          className: 'about'
+          className: 'my-16'
         },
         children: {
           element: 'div',
           props: {
-            className: 'container'
+            className: 'mx-auto max-w-7xl px-4'
           },
           children: [
             {
@@ -165,26 +158,26 @@ const landingPage = {
             {
               element: 'div',
               props: {
-                className: 'row'
+                className: 'grid grid-cols-12 gap-6'
               },
               children: [
                 {
                   element: 'div',
                   props: {
-                    className: "col-lg-4 col-md-4 col-sm-12"
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: [
                     {
                       element: 'img',
                       props: {
-                        src: "images/team-3.jpg",
-                        className: 'img-fluid'
+                        src: "/images/team-3.jpg",
+                        className: 'max-w-full h-auto rounded'
                       }
                     },
                     {
                       element: 'span',
                       props: {
-                        className: 'text-justify'
+                        className: 'text-justify text-gray-500'
                       },
                       children: 'S.Web Developer'
                     }
@@ -193,7 +186,7 @@ const landingPage = {
                 {
                   element: 'div',
                   props: {
-                    className: "col-lg-8 col-md-8 col-sm-12 desc"
+                    className: 'col-span-12 md:col-span-6 lg:col-span-8 border-l-4 border-accent-600 p-6'
                   },
                   children: [
                     {
@@ -219,141 +212,231 @@ const landingPage = {
       {
         element: 'div',
         props: {
-          className: 'portfolio'
+          className: 'py-16'
         },
         children: [
           {
             element: 'h1',
             props: {
-              className: 'text-center'
+              className: 'text-center text-3xl font-semibold mb-10'
             },
             children: 'Portfolio'
           },
           {
             element: 'div',
             props: {
-              className: 'container'
+              className: 'mx-auto max-w-7xl px-4'
             },
             children: {
               element: 'div',
               props: {
-                className: 'row'
+                className: 'grid grid-cols-12 gap-4 sm:gap-6'
               },
               children: [
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/port13.png"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/port13.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1319,
+                        height: 654,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/port1.png"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/port1.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1319,
+                        height: 4076,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/port6.png"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/port6.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1312,
+                        height: 654,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/port3.png"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/port3.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1319,
+                        height: 1512,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/port11.png"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/port11.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1319,
+                        height: 2067,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/electric.png"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/electric.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1319,
+                        height: 3308,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/classic.jpg"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/Classic.jpg",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1600,
+                        height: 3391,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/port1.png"
-                    },
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/port1.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1319,
+                        height: 4076,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
+                    }
                   }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-4 col-md-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
-                    element: 'img',
-                    props: {
-                      className: 'img-fluid',
-                      src: "images/portfolio/port8.png"
+                    element: 'div',
+                    props: { className: 'aspect-[4/3] overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow' },
+                    children: {
+                      element: 'img',
+                      props: {
+                        className: 'w-full h-full object-cover',
+                        src: "/images/portfolio/port8.png",
+                        alt: 'Portfolio item',
+                        loading: 'lazy',
+                        decoding: 'async',
+                        width: 1319,
+                        height: 863,
+                        sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      }
                     }
                   }
                 }
@@ -365,68 +448,73 @@ const landingPage = {
       {
         element: 'div',
         props: {
-          className: 'blog'
+          className: 'py-16'
         },
         children: {
           element: 'div',
           props: {
-            className: 'container'
+            className: 'mx-auto max-w-7xl px-4'
           },
           children: [
             {
               element: 'h1',
               props: {
-                className: 'text-center'
+                className: 'text-center text-3xl font-semibold mb-10'
               },
               children: 'Blog'
             },
             {
               element: 'div',
               props: {
-                className: 'row'
+                className: 'grid grid-cols-12 gap-6 items-stretch'
               },
               children: [
                 {
                   element: 'div',
                   props: {
-                    className: 'col-md-4 col-lg-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
                     element: 'div',
                     props: {
-                      className: 'card'
+                      className: 'shadow rounded overflow-hidden bg-white h-full flex flex-col'
                     },
                     children: [
                       {
                         element: 'div',
                         props: {
-                          className: 'card-img'
+                          className: ''
                         },
                         children: {
                           element: 'img',
                           props: {
-                            src: "images/posts/polit.jpg",
-                            className: "img-fluid"
+                            src: "/images/posts/polit.jpg",
+                            className: 'w-full h-48 object-cover',
+                            width: 387,
+                            height: 130,
+                            loading: 'lazy',
+                            decoding: 'async',
+                            sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
                           }
                         }
                       },
                       {
                         element: 'div',
                         props: {
-                          className: 'card-body'
+                          className: 'p-4 flex-grow'
                         },
                         children: [
                           {
                             element: 'h4',
                             props: {
-                              className: 'card-title'
+                            className: 'text-accent-600 font-semibold'
                             },
                             children: 'Post Title'
                           },
                           {
                             element: 'div',
                             props: {
-                              className: 'card-text'
+                              className: 'text-gray-600'
                             },
                             children: 'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
                           }
@@ -435,12 +523,12 @@ const landingPage = {
                       {
                         element: 'div',
                         props: {
-                          className: 'card-footer'
+                          className: 'p-4 border-t mt-auto'
                         },
                         children: {
                           element: 'a',
                           props: {
-                            className: 'card-link'
+                            className: 'link'
                           },
                           children: 'Read more'
                         }
@@ -451,44 +539,49 @@ const landingPage = {
                 {
                   element: 'div',
                   props: {
-                    className: 'col-md-4 col-lg-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
                     element: 'div',
                     props: {
-                      className: 'card'
+                      className: 'shadow rounded overflow-hidden bg-white h-full flex flex-col'
                     },
                     children: [
                       {
                         element: 'div',
                         props: {
-                          className: 'card-img'
+                          className: ''
                         },
                         children: {
                           element: 'img',
                           props: {
-                            src: "images/posts/images.jpg",
-                            className: "img-fluid"
+                            src: "/images/posts/images.jpg",
+                            className: 'w-full h-48 object-cover',
+                            width: 194,
+                            height: 259,
+                            loading: 'lazy',
+                            decoding: 'async',
+                            sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
                           }
                         }
                       },
                       {
                         element: 'div',
                         props: {
-                          className: 'card-body'
+                          className: 'p-4 flex-grow'
                         },
                         children: [
                           {
                             element: 'h4',
                             props: {
-                              className: 'card-title'
+                            className: 'text-accent-600 font-semibold'
                             },
                             children: 'Post Title'
                           },
                           {
                             element: 'div',
                             props: {
-                              className: 'card-text'
+                              className: 'text-gray-600'
                             },
                             children: 'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
                           }
@@ -497,12 +590,12 @@ const landingPage = {
                       {
                         element: 'div',
                         props: {
-                          className: 'card-footer'
+                          className: 'p-4 border-t mt-auto'
                         },
                         children: {
                           element: 'a',
                           props: {
-                            className: 'card-link'
+                            className: 'link'
                           },
                           children: 'Read more'
                         }
@@ -513,44 +606,49 @@ const landingPage = {
                 {
                   element: 'div',
                   props: {
-                    className: 'col-md-4 col-lg-4 col-sm-12'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-4'
                   },
                   children: {
                     element: 'div',
                     props: {
-                      className: 'card'
+                      className: 'shadow rounded overflow-hidden bg-white h-full flex flex-col'
                     },
                     children: [
                       {
                         element: 'div',
                         props: {
-                          className: 'card-img'
+                          className: ''
                         },
                         children: {
                           element: 'img',
                           props: {
-                            src: "images/posts/imag2.jpg",
-                            className: "img-fluid"
+                            src: "/images/posts/imag2.jpg",
+                            className: 'w-full h-48 object-cover',
+                            width: 205,
+                            height: 246,
+                            loading: 'lazy',
+                            decoding: 'async',
+                            sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
                           }
                         }
                       },
                       {
                         element: 'div',
                         props: {
-                          className: 'card-body'
+                          className: 'p-4 flex-grow'
                         },
                         children: [
                           {
                             element: 'h4',
                             props: {
-                              className: 'card-title'
+                            className: 'text-accent-600 font-semibold'
                             },
                             children: 'Post Title'
                           },
                           {
                             element: 'div',
                             props: {
-                              className: 'card-text'
+                              className: 'text-gray-600'
                             },
                             children: 'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
                           }
@@ -559,12 +657,12 @@ const landingPage = {
                       {
                         element: 'div',
                         props: {
-                          className: 'card-footer'
+                          className: 'p-4 border-t mt-auto'
                         },
                         children: {
                           element: 'a',
                           props: {
-                            className: 'card-link'
+                            className: 'link'
                           },
                           children: 'Read more'
                         }
@@ -580,146 +678,198 @@ const landingPage = {
       {
         element: 'div',
         props: {
-          className: 'team'
+          className: 'py-16'
         },
         children: {
           element: 'div',
           props: {
-            className: 'container'
+            className: 'mx-auto max-w-7xl px-4'
           },
           children: [
             {
               element: 'h1',
               props: {
-                className: 'text-center'
+                className: 'text-center text-3xl font-semibold mb-10'
               },
               children: 'Our Team'
             },
             {
               element: 'div',
               props: {
-                className: 'row'
+                className: 'grid grid-cols-12 gap-6 items-stretch'
               },
               children: [
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-3 col-md-3 col-sm-12 item'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-3'
                   },
-                  children: [
-                    {
-                      element: 'img',
-                      props: {
-                        src:"images/team-2.jpg",
-                        className: "img-fluid",
-                        alt: "team"
+                  children: {
+                    element: 'div',
+                    props: {
+                      className: 'h-full bg-white rounded shadow overflow-hidden flex flex-col'
+                    },
+                    children: [
+                      {
+                        element: 'div',
+                        props: { className: 'relative' },
+                        children: [
+                          {
+                            element: 'img',
+                            props: {
+                              src:"/images/team-2.jpg",
+                              className: 'w-full h-64 object-cover',
+                              alt: "team",
+                              loading: 'lazy'
+                            }
+                          },
+                          {
+                            element: 'div',
+                            props: {
+                              className: 'bg-accent-600 text-white text-center px-2 py-1 absolute bottom-2 w-11/12 left-1/2 -translate-x-1/2 rounded'
+                            },
+                            children: 'Sara'
+                          }
+                        ]
+                      },
+                      {
+                        element: 'div',
+                        props: {
+                          className: 'p-3 border-t mt-auto text-center text-gray-500'
+                        },
+                        children: 'Manager'
                       }
-                    },
-                    {
-                      element: 'div',
-                      props: {
-                        className: 'des'
-                      },
-                      children: 'Sara'
-                    },
-                    {
-                      element: 'span',
-                      props: {
-                        className: 'text-muted'
-                      },
-                      children: 'Manager'
-                    }
-                  ]
+                    ]
+                  }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-3 col-md-3 col-sm-12 item'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-3'
                   },
-                  children: [
-                    {
-                      element: 'img',
-                      props: {
-                        src:"images/team-3.jpg",
-                        className: "img-fluid",
-                        alt: "team"
+                  children: {
+                    element: 'div',
+                    props: {
+                      className: 'h-full bg-white rounded shadow overflow-hidden flex flex-col'
+                    },
+                    children: [
+                      {
+                        element: 'div',
+                        props: { className: 'relative' },
+                        children: [
+                          {
+                            element: 'img',
+                            props: {
+                              src:"/images/team-3.jpg",
+                              className: 'w-full h-64 object-cover',
+                              alt: "team",
+                              loading: 'lazy'
+                            }
+                          },
+                          {
+                            element: 'div',
+                            props: {
+                              className: 'bg-accent-600 text-white text-center px-2 py-1 absolute bottom-2 w-11/12 left-1/2 -translate-x-1/2 rounded'
+                            },
+                            children: 'Sara'
+                          }
+                        ]
+                      },
+                      {
+                        element: 'div',
+                        props: {
+                          className: 'p-3 border-t mt-auto text-center text-gray-500'
+                        },
+                        children: 'Manager'
                       }
-                    },
-                    {
-                      element: 'div',
-                      props: {
-                        className: 'des'
-                      },
-                      children: 'Sara'
-                    },
-                    {
-                      element: 'span',
-                      props: {
-                        className: 'text-muted'
-                      },
-                      children: 'Manager'
-                    }
-                  ]
+                    ]
+                  }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-3 col-md-3 col-sm-12 item'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-3'
                   },
-                  children: [
-                    {
-                      element: 'img',
-                      props: {
-                        src:"images/team-2.jpg",
-                        className: "img-fluid",
-                        alt: "team"
+                  children: {
+                    element: 'div',
+                    props: {
+                      className: 'h-full bg-white rounded shadow overflow-hidden flex flex-col'
+                    },
+                    children: [
+                      {
+                        element: 'div',
+                        props: { className: 'relative' },
+                        children: [
+                          {
+                            element: 'img',
+                            props: {
+                              src:"/images/team-2.jpg",
+                              className: 'w-full h-64 object-cover',
+                              alt: "team",
+                              loading: 'lazy'
+                            }
+                          },
+                          {
+                            element: 'div',
+                            props: {
+                              className: 'bg-accent-600 text-white text-center px-2 py-1 absolute bottom-2 w-11/12 left-1/2 -translate-x-1/2 rounded'
+                            },
+                            children: 'Sara'
+                          }
+                        ]
+                      },
+                      {
+                        element: 'div',
+                        props: {
+                          className: 'p-3 border-t mt-auto text-center text-gray-500'
+                        },
+                        children: 'Manager'
                       }
-                    },
-                    {
-                      element: 'div',
-                      props: {
-                        className: 'des'
-                      },
-                      children: 'Sara'
-                    },
-                    {
-                      element: 'span',
-                      props: {
-                        className: 'text-muted'
-                      },
-                      children: 'Manager'
-                    }
-                  ]
+                    ]
+                  }
                 },
                 {
                   element: 'div',
                   props: {
-                    className: 'col-lg-3 col-md-3 col-sm-12 item'
+                    className: 'col-span-12 md:col-span-6 lg:col-span-3'
                   },
-                  children: [
-                    {
-                      element: 'img',
-                      props: {
-                        src:"images/team-3.jpg",
-                        className: "img-fluid",
-                        alt: "team"
+                  children: {
+                    element: 'div',
+                    props: {
+                      className: 'h-full bg-white rounded shadow overflow-hidden flex flex-col'
+                    },
+                    children: [
+                      {
+                        element: 'div',
+                        props: { className: 'relative' },
+                        children: [
+                          {
+                            element: 'img',
+                            props: {
+                              src:"/images/team-3.jpg",
+                              className: 'w-full h-64 object-cover',
+                              alt: "team",
+                              loading: 'lazy'
+                            }
+                          },
+                          {
+                            element: 'div',
+                            props: {
+                              className: 'bg-accent-600 text-white text-center px-2 py-1 absolute bottom-2 w-11/12 left-1/2 -translate-x-1/2 rounded'
+                            },
+                            children: 'Sara'
+                          }
+                        ]
+                      },
+                      {
+                        element: 'div',
+                        props: {
+                          className: 'p-3 border-t mt-auto text-center text-gray-500'
+                        },
+                        children: 'Manager'
                       }
-                    },
-                    {
-                      element: 'div',
-                      props: {
-                        className: 'des'
-                      },
-                      children: 'Sara'
-                    },
-                    {
-                      element: 'span',
-                      props: {
-                        className: 'text-muted'
-                      },
-                      children: 'Manager'
-                    }
-                  ]
+                    ]
+                  }
                 }
               ]
             }
