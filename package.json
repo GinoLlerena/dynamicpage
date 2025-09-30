@@ -4,9 +4,10 @@
   "private": true,
   "dependencies": {
     "@tanstack/react-table": "^8.21.3",
+    "@tanstack/react-router": "^1.63.9",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "uuid": "^8.3.2"
+    "uuid": "^9.0.1"
   },
   "scripts": {
     "dev": "vite",
@@ -46,10 +47,5 @@
     "vitest": "^2.1.5",
     "@tanstack/router-plugin": "^1.63.9",
     "@tanstack/router-devtools": "^1.63.9"
-  }
-  ,
-  "dependencies": {
-    "@tanstack/react-router": "^1.63.9",
-    "uuid": "^9.0.1"
   }
 }
