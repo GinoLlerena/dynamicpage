@@ -6,6 +6,7 @@
     "@tanstack/react-form": "^1.23.5",
     "@tanstack/react-router": "^1.63.9",
     "@tanstack/react-table": "^8.21.3",
+    "lodash": "^4.17.21",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "uuid": "^9.0.1"
