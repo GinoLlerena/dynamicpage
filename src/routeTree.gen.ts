@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RenderRouteImport } from './routes/render'
+import { Route as FormBuilderRouteImport } from './routes/form-builder'
 import { Route as BuilderRouteImport } from './routes/builder'
 import { Route as IndexRouteImport } from './routes/index'
 
 const RenderRoute = RenderRouteImport.update({
   id: '/render',
   path: '/render',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormBuilderRoute = FormBuilderRouteImport.update({
+  id: '/form-builder',
+  path: '/form-builder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BuilderRoute = BuilderRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/builder': typeof BuilderRoute
+  '/form-builder': typeof FormBuilderRoute
   '/render': typeof RenderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/builder': typeof BuilderRoute
+  '/form-builder': typeof FormBuilderRoute
   '/render': typeof RenderRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/builder': typeof BuilderRoute
+  '/form-builder': typeof FormBuilderRoute
   '/render': typeof RenderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/builder' | '/render'
+  fullPaths: '/' | '/builder' | '/form-builder' | '/render'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/builder' | '/render'
-  id: '__root__' | '/' | '/builder' | '/render'
+  to: '/' | '/builder' | '/form-builder' | '/render'
+  id: '__root__' | '/' | '/builder' | '/form-builder' | '/render'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BuilderRoute: typeof BuilderRoute
+  FormBuilderRoute: typeof FormBuilderRoute
   RenderRoute: typeof RenderRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/render'
       fullPath: '/render'
       preLoaderRoute: typeof RenderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/form-builder': {
+      id: '/form-builder'
+      path: '/form-builder'
+      fullPath: '/form-builder'
+      preLoaderRoute: typeof FormBuilderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/builder': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BuilderRoute: BuilderRoute,
+  FormBuilderRoute: FormBuilderRoute,
   RenderRoute: RenderRoute,
 }
 export const routeTree = rootRouteImport

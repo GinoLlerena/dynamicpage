@@ -1,0 +1,74 @@
+{
+  "id": "contactForm",
+  "title": "Get in Touch",
+  "description": "Reach out with your questions or project ideas.",
+  "layout": {
+    "containerClassName": "contact-form py-12",
+    "innerClassName": "mx-auto max-w-7xl px-4",
+    "formClassName": "",
+    "gridClassName": "grid grid-cols-12 gap-6"
+  },
+  "fields": [
+    {
+      "id": "heading",
+      "component": "heading",
+      "text": "Get in Touch",
+      "wrapperClassName": "col-span-12 md:col-span-4",
+      "props": {
+        "as": "h1",
+        "className": "text-2xl font-semibold"
+      }
+    },
+    {
+      "id": "name",
+      "component": "input",
+      "type": "text",
+      "placeholder": "Your Name",
+      "wrapperClassName": "col-span-12 md:col-span-8 md:col-start-5",
+      "spacingClassName": "mb-4",
+      "inputClassName": "w-full rounded border border-gray-300 px-3 py-2 text-base",
+      "defaultValue": "",
+      "validation": {
+        "required": {
+          "message": "Please let us know who you are."
+        }
+      }
+    },
+    {
+      "id": "email",
+      "component": "input",
+      "type": "email",
+      "placeholder": "YourEmail@email.com",
+      "wrapperClassName": "col-span-12 md:col-span-8 md:col-start-5",
+      "spacingClassName": "mb-4",
+      "inputClassName": "w-full rounded border border-gray-300 px-3 py-2 text-base",
+      "defaultValue": "",
+      "validation": {
+        "required": {
+          "message": "We need an email to get back to you."
+        },
+        "pattern": {
+          "value": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+          "message": "Enter a valid email address."
+        }
+      }
+    },
+    {
+      "id": "message",
+      "component": "textarea",
+      "placeholder": "How can we help?",
+      "wrapperClassName": "col-span-12 md:col-span-8 md:col-start-5",
+      "spacingClassName": "mb-4",
+      "inputClassName": "w-full rounded border border-gray-300 px-3 py-2 text-base min-h-[120px]",
+      "defaultValue": ""
+    },
+    {
+      "id": "submit",
+      "component": "button",
+      "type": "submit",
+      "text": "Send",
+      "wrapperClassName": "col-span-12 md:col-span-8 md:col-start-5",
+      "className": "w-full btn btn-primary"
+    }
+  ]
+}
